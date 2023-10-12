@@ -17,6 +17,7 @@ addButton.addEventListener('click', function (e) {
         } else {
             currentChar = String.fromCharCode(currentChar.charCodeAt(0) + 1);
         }
+        output.style.color = '';
         output.textContent = currentChar;
     }
 });
@@ -35,6 +36,7 @@ subtractButton.addEventListener('click', function (e) {
         } else {
             currentChar = String.fromCharCode(currentChar.charCodeAt(0) - 1);
         }
+        output.style.color = '';
         output.textContent = currentChar;
     }
 });
