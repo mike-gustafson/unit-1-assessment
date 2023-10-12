@@ -7,13 +7,20 @@ const sliderContainer = document.getElementById('slider-container');
 let currentNumber = 1;
 
 function updateOutputValue() {
-    if (slider.checked) {
-        let resultChar = String.fromCharCode((Math.abs(currentNumber) % 26) + 97);
-        output.textContent = resultChar.toUpperCase();
-    } else {
+    if (currentNumber === 0) {
         output.textContent = currentNumber;
+    } else {
+        if (slider.checked) {
+            let resultChar = String.fromCharCode((Math.abs(currentNumber) % 26) + 96);
+            if (((Math.abs(currentNumber) % 26) + 96) === 96) {
+                resultChar = 'Z'
+            }
+            output.textContent = resultChar.toUpperCase();
+        } else {
+            output.textContent = currentNumber;
+        }
+        updateOutputColor();
     }
-    updateOutputColor();
 }
 
 addButton.addEventListener('click', function (e) {
