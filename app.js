@@ -8,7 +8,7 @@ let currentNumber = 1;
 
 function updateOutputValue() {
     if (slider.checked) {
-        let resultChar = String.fromCharCode((Math.abs(currentNumber) % 26) + 96);
+        let resultChar = String.fromCharCode((Math.abs(currentNumber) % 26) + 97);
         output.textContent = resultChar.toUpperCase();
     } else {
         output.textContent = currentNumber;
