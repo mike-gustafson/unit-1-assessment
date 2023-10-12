@@ -1,35 +1,34 @@
-const outputElement = document.getElementById('output');
+const output = document.getElementById('output');
 const addButton = document.getElementById('add-button');
 const subtractButton = document.getElementById('subtract-button');
-const inputElement = document.querySelector('input');
+const input = document.querySelector('input');
 
-addButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    const inputValue = parseFloat(inputElement.value);
-    const currentValue = parseFloat(outputElement.textContent);
+addButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    const inputValue = parseFloat(input.value);
+    const currentValue = parseFloat(output.textContent);
     if (!isNaN(inputValue)) {
         const result = currentValue + inputValue;
-        outputElement.textContent = result;
+        output.textContent = result;
         updateOutputColor(result);
     }
 });
 
-subtractButton.addEventListener('click', function (event) {
-    event.preventDefault();
-    const inputValue = parseFloat(inputElement.value);
-    const currentValue = parseFloat(outputElement.textContent);
+subtractButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    const inputValue = parseFloat(input.value);
+    const currentValue = parseFloat(output.textContent);
     if (!isNaN(inputValue)) {
         const result = currentValue - inputValue;
-        outputElement.textContent = result;
+        output.textContent = result;
         updateOutputColor(result);
     }
 });
 
-// Function to update the output color
 function updateOutputColor(result) {
     if (result < 0) {
-        outputElement.style.color = 'red';
+        output.style.color = 'red';
     } else {
-        outputElement.style.color = ''; // Reset to the default color
+        output.style.color = '';
     }
 }
