@@ -12,13 +12,15 @@ addButton.addEventListener('click', function (e) {
         output.textContent = result;
         updateOutputColor(result);
     } else {
+        currentChar = input.value;
         if (currentChar === 'z') {
             currentChar = 'a';
         } else {
             currentChar = String.fromCharCode(currentChar.charCodeAt(0) + 1);
         }
         output.style.color = '';
-        output.textContent = currentChar;
+        output.textContent = currentChar.toUpperCase();
+        input.value = currentChar;
     }
 });
 
@@ -31,13 +33,15 @@ subtractButton.addEventListener('click', function (e) {
         output.textContent = result;
         updateOutputColor(result);
     } else {
+        currentChar = input.value;
         if (currentChar === 'a') {
             currentChar = 'z';
         } else {
             currentChar = String.fromCharCode(currentChar.charCodeAt(0) - 1);
         }
         output.style.color = '';
-        output.textContent = currentChar;
+        output.textContent = currentChar.toUpperCase();
+        input.value = currentChar;
     }
 });
 
